@@ -2,7 +2,9 @@
 step 1]  Download and extract zip folder .
 
 step 2] Create virtual environment  and activate it(Optional).
-step 3] go to DJango-master (where requirements.txt file is ) install required packages by command  *$ pip install -r requirements.txt* .
+step 3] go to DJango-master (where requirements.txt file is ) install required packages by command 
+
+*$ pip install -r requirements.txt* .
 
 
 step 4] type command(in same path i.e where manage.py is ) 
