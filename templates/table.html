@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Task ID</th>
+        <th>Task Name</th>
+        <th>Deadline</th>
+        <th>IS Complete</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="rows">
+        {% for item in tasks %}
+
+        <TR>
+           
+           <TD class="c2">{{item.id}}</TD>
+           <TD class="c3">{{item.taskname}}</TD>
+           <TD class="c4"><SPAN>{{item.enddate}}</SPAN></TD>
+           {% if item.iscomplete %}
+                <TD class="c5"><SPAN>Yes</SPAN></TD>
+            {% else %}
+            <TD class="c5"><SPAN>No</SPAN></TD>
+            {% endif %}
+            <td><a href="{% url 'changestatus' id=item.id %}" class="btn btn-default pull-right">Done</a></td>
+            <td><a href="{% url 'update' id=item.id %}" class="btn btn-default pull-right">Edit</a></td>
+            <td><a href="{% url 'delete' id=item.id %}" class="btn btn-default pull-right">Delete</a></td>
+
+        </TR>
+        {% endfor %}
+  </table>
+  <div class="comtainer">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+            <td><a href="{% url 'index'  %}" class="btn btn-default ">ADD</a></td>
+        </div>
+        <div class="col-sm-3">
+            <td><a href="{% url 'search_page'  %}" class="btn btn-default ">Search</a></td>
+        </div>
+    </div>
+</div>
+  {% endblock %}
